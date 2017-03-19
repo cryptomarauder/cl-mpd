@@ -1,0 +1,67 @@
+Last Updated: 2006-06-12
+
+NEWS:
+
+I've written the code to make CL-MPD work under LispWorks. (June 12, 2006)
+
+NOTE:
+
+A note to anyone reading this and wants to contribute, please I'd like to ask
+that any contributions be limited to suggestions and small patches if anything.
+The reason I ask this is that this project is very much so a first step for me
+in learning common lisp, and I would like to work through as many of the
+difficulties as I can, on my own. 
+
+A note about the way I do things. I know that it is standard to seperate blocks
+of code in lisp programs with one blank line, however for reasons of readability
+I would like to keep it at two lines in my code. Lisp has the tendency to look
+like one continuous block of code, and I find that the two lines really help
+make the code easier to read/navigate. 
+
+On another note, someone is bound to comment about my use of vim, so to address
+this in advance I'll say that first of all I'm sticking with vim. If emacs
+requires a modeline at the top to function properly then I'll not object to the
+inclusion of one, however if you remove the vim modeline I will find you and eat
+your brains with a spoon! ^_^
+
+
+PECULIARITIES:
+
+A note about the asdf cruft for this package; ignore it. I know it's mostly
+there and it would be easy to fill in the holes, but I'm changing things
+everyday so it would be to much of a hassle, sorry.
+
+A note about the following functions:
+
+MPD-SEND-LISTALL-COMMAND,
+MPD-SEND-LISTALLINFO-COMMAND,
+MPD-SEND-LSINFO-COMMAND.
+
+These functions take directory arugments that are relative to MPD's base
+directory. For example if you kept death metal in /audio/death_metal, then
+"death_metal/cannibal_corpse" would be a valid directory, whereas
+"/audio/death_metal/cannibal_corpse" would not.
+
+One the subject of the macros WITH-MPD-*-SLOTS, I'd just like to say that these
+are convenience macros, and in all honesty are bad abstractions that should only
+be used when one is absolutely certain that the side effects won't get in the
+way of any other symbols.
+
+
+FUTURE PLANS:
+
+Well first of all this is really just a rough sketch of what this library will
+be when I call it version 1.0. There are a few basics not yet implemented at the
+time of this writing. Also this library is completely unintelligent, that is it
+doesn't do any response processing atm.  The reason for this is that I was
+aiming for, like I said, a rough sketch. and secondly I wanted to tackle that
+when I get around to rewritting things to take advantage of CLOS. Secondly since
+you may have noticed that I've moddeled the library after libmpdclient.c, I'd
+like to go over things after the classes and methods are in place, and make
+things "lispy," ie, much simpler. This is another area I'd welcome suggestions,
+that is any suggestions about the design are very much so welcomed.
+
+Update: 
+So some things have changed, I've implemented some CLOS parts which really make
+this library so much nicer than libmpdclient imo, and things will only improve
+with time. G-d, I swear I love this programming language...

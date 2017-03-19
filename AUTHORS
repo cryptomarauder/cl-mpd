@@ -1,0 +1,11 @@
+Authors:
+Stephen Horner, PGP: 0x7FCEDB5DBE493F18
+
+Attribution
+---------
+
+LOOKUP-HOSTNAME, MAKE-ACTIVE-SOCKET: were taken from Kevin M. Rosenberg's kmrcl
+package, and clisp support was added to MAKE-ACTIVE-SOCKET by myself (Stephen
+Horner).
+
+READ-BUF-NONBLOCK was taken from SBCL's sb-bsd-sockets/tests.lisp
